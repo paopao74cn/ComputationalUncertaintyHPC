@@ -1,6 +1,7 @@
 [submodule "halo_analysis"]
 	path = halo_analysis
 	url = git@github.com:reproducibilityinpublishing/halo_analysis
+	branch = master
 [submodule "spack"]
 	path = spack
 	url = git@github.com:krafczyk/spack

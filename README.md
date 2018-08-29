@@ -3,11 +3,13 @@ This repo is associated with experiments done on NCSA's Blue Waters system to im
 * Due to the non-deterministic nature of this experimental procedure, we expect scientists attempting to replicate this work will only replicate to one or two significant digits for each experiment. These experiments were carried out during the later half of 2016 and so a researcher attempting to replicate this work on Blue Waters may find specific versions of compilers we used (and even Blue Waters itself) unavailable in the future.
 * [gif displaying experimental output](http://stanford.edu/~vcs/animated.gif)
 
-## Software
+## Software Summary
 
 We present here a list of software which was used to perform the cosmology simulations along with the software to analyze the output.
 
 ### Cosmology Simulation
+
+As a summary, we quickly go over the software associated with the cosmology simulation itself. We use The following libraries and frameworks either explicitly or as a dependency.
 
 - Enzo 2.5
 - HDF5 1.8 (We tested with 1.8.16 and 1.8.20)
@@ -146,3 +148,19 @@ spack find -d -v py-libconf
                 ^zlib@1.2.11+optimize+pic+shared
             ^sqlite@3.23.1~functions
 ```
+
+## Build procedure
+
+### Manually managed
+
+We are confident that if the user builds all the listed packages above and sets their `PATH`, `LD_LIBRARY_PATH`, `PKG_CONFIG_PATH`, and `PYTHONPATH` appropriately with respect to the installation directory, they will be able to run the initial cosmology simulation as well as the analysis which follows.
+
+### Spack Managed
+
+We provide a script called `install_with_spack.sh` which uses spack to install the necessary packages. If `spack` has trouble installing a given package, you can try adjusting the version number, as well as applying a patch to fix your problem.
+
+## Run Procedure
+
+Provided with this software package is the directory `32-7-10Mpc-z0`. This directory contains all the necessary parameter files and initial conditions files to run `enzo`.
+
+Once Enzo is built and the binary `enzo` runs, navigate to the `32-7-10Mpc-z0` directory, and execute

@@ -163,4 +163,10 @@ We provide a script called `install_with_spack.sh` which uses spack to install t
 
 Provided with this software package is the directory `32-7-10Mpc-z0`. This directory contains all the necessary parameter files and initial conditions files to run `enzo`.
 
-Once Enzo is built and the binary `enzo` runs, navigate to the `32-7-10Mpc-z0` directory, and execute
+Once Enzo is built and the binary `enzo` runs, navigate to the `32-7-10Mpc-z0` directory, and execute `mpirun -np ${NUM_CORES} enzo gas_plus_dm_amr_multiphys.enzo`
+
+### Reduced test case
+
+In order to quickly test that you have this simulation running correctly, We provide a reduced test case which should run in < 1 hour for most users.
+
+`16-3-10Mpc-z0` contains the already generated initial conditions and the enzo parameters definitions file.
